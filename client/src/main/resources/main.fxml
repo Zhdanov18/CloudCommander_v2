@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<?import java.net.URL?>
+<HBox fx:id="mainHBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="675.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainController">
+    <stylesheets><URL value="@/css/main.css" /> </stylesheets>
+    <VBox HBox.hgrow="ALWAYS">
+        <Label fx:id="labelClientPath" text="" />
+        <ListView fx:id="clientList"  VBox.vgrow="ALWAYS" prefWidth="300.0" minWidth="300.0"/>
+        <Label fx:id="labelClientFileSize" text="" />
+    </VBox>
+    <ToolBar fx:id="toolBar" minWidth="57.0" orientation="VERTICAL" HBox.hgrow="ALWAYS">
+        <items>
+            <Button fx:id="btnLogin" mnemonicParsing="false" onAction="#btnLogin" prefHeight="32.0" prefWidth="32.0" BorderPane.alignment="CENTER">
+                <graphic>
+                    <ImageView fx:id="btnLoginImage" fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@/img/offline.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+                <VBox.margin>
+                    <Insets top="10.0" bottom="50.0" />
+                </VBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#refreshList" prefHeight="32.0" prefWidth="32.0" BorderPane.alignment="CENTER">
+                <graphic>
+                    <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@/img/refresh.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#btnCopy" prefHeight="32.0" prefWidth="32.0">
+                <graphic>
+                    <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@/img/copy.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+            <Button fx:id="btnCreate" mnemonicParsing="false" onAction="#btnCreate" prefHeight="32.0" prefWidth="32.0">
+                <graphic>
+                    <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@/img/create.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#btnRemove" prefHeight="32.0" prefWidth="32.0">
+                <graphic>
+                    <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@/img/remove.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+                <VBox.margin>
+                    <Insets top="50.0" />
+                </VBox.margin>
+            </Button>
+        </items>
+    </ToolBar>
+    <VBox HBox.hgrow="ALWAYS">
+        <Label fx:id="labelServerPath" text="" />
+        <ListView fx:id="serverList" VBox.vgrow="ALWAYS" prefWidth="300.0" minWidth="300.0"/>
+        <Label fx:id="labelServerFileSize" text="" />
+    </VBox>
+</HBox>
